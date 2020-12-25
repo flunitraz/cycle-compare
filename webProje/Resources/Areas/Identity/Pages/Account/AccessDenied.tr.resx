@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="anasayfa" xml:space="preserve">
-    <value>Anasayfa</value>
+  <data name="baslik" xml:space="preserve">
+    <value>Erisim Engellendi</value>
   </data>
-  <data name="gizlilik" xml:space="preserve">
-    <value>Gizlilik</value>
+  <data name="icerik" xml:space="preserve">
+    <value>Bu sayfayi goruntulemek icin yetkiniz yok</value>
   </data>
 </root>

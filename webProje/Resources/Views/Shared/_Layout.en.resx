@@ -120,4 +120,7 @@
   <data name="anasayfa" xml:space="preserve">
     <value>Main Page</value>
   </data>
+  <data name="gizlilik" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
 </root>

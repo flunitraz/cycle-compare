@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="anasayfa" xml:space="preserve">
-    <value>Anasayfa</value>
+  <data name="kaydol" xml:space="preserve">
+    <value>Register</value>
   </data>
-  <data name="gizlilik" xml:space="preserve">
-    <value>Gizlilik</value>
+  <data name="mail" xml:space="preserve">
+    <value>Mail Adress</value>
+  </data>
+  <data name="olustur" xml:space="preserve">
+    <value>Create a new account.</value>
+  </data>
+  <data name="sifre" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="sifredogrulama" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
 </root>

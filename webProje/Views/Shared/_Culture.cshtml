@@ -17,7 +17,7 @@
 <div>
     <form asp-controller="Home" asp-action="CultureManagement"
           asp-route-returnUrl="@returnUrl" method="post">
-        <select class="form-control" name="culture" asp-for="@culture.RequestCulture.UICulture.Name" asp-items="cultureList"
+        <select class="form-control bg-transparent text-white" name="culture" asp-for="@culture.RequestCulture.UICulture.Name" asp-items="cultureList"
                 onchange="this.form.submit();">
         </select>
     </form>
