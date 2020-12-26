@@ -8,6 +8,10 @@ body {
   font-family: 'Lato';
 }
 
+a {
+    text-decoration-color:red;
+}
+
 h1,
 h2,
 h3,

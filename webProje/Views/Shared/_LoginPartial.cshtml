@@ -2,7 +2,9 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
 @await Html.PartialAsync("_Culture")
+
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
