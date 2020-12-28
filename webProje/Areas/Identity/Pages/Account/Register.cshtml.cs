@@ -24,7 +24,6 @@ namespace webProje.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-        private readonly IViewLocalizer localizer;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,

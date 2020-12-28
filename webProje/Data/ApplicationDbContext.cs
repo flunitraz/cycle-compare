@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using webProje.Models;
 
 namespace webProje.Data
 {
@@ -12,5 +13,7 @@ namespace webProje.Data
             : base(options)
         {
         }
+
+        public DbSet<Bisiklet> Bisikletler { get; set; }
     }
 }

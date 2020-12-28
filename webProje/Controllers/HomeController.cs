@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using webProje.Data;
 using webProje.Models;
 
 namespace webProje.Controllers
@@ -25,12 +26,10 @@ namespace webProje.Controllers
             return View();
         }
 
-
         public IActionResult Privacy()
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult CultureManagement(string culture, string returnUrl)
         {

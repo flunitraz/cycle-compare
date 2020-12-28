@@ -1,0 +1,10 @@
+﻿@model List<Bisiklet> 
+
+    <div>
+        Bisiklet Listesi
+    </div>
+@foreach (var bisiklet in Model)
+{ 
+    <h2>@bisiklet.Marka - @bisiklet.JantCapi - @bisiklet.Materyal </h2>
+}
+kk
