@@ -121,6 +121,6 @@
     <value>Access denied</value>
   </data>
   <data name="icerik" xml:space="preserve">
-    <value>You do not have access to this resource</value>
+    <value>You do not have access or need login to this resource</value>
   </data>
 </root>

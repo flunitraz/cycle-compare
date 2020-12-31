@@ -118,66 +118,66 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="alu" xml:space="preserve">
-    <value>Aluminyum</value>
+    <value>Aluminium</value>
   </data>
   <data name="cift" xml:space="preserve">
-    <value>Cift Suspansiyon</value>
+    <value>Dual Suspension</value>
   </data>
   <data name="fotograf" xml:space="preserve">
-    <value>Fotograf</value>
+    <value>Photo</value>
   </data>
   <data name="frenturu" xml:space="preserve">
-    <value>Fren Sistemi</value>
+    <value>Brake System</value>
   </data>
   <data name="hidrolik" xml:space="preserve">
-    <value>Hidrolik Disk Fren</value>
+    <value>Hyduralic Disc Brake</value>
   </data>
   <data name="jantcapi" xml:space="preserve">
-    <value>Jant Boyutu</value>
+    <value>Rim Inches</value>
   </data>
   <data name="karbon" xml:space="preserve">
-    <value>Karbon</value>
+    <value>Carbon</value>
   </data>
   <data name="kullanimalani" xml:space="preserve">
-    <value>Kullanim</value>
+    <value>Usage </value>
   </data>
   <data name="liste" xml:space="preserve">
-    <value>Bisiklet Listesi</value>
+    <value>Mountain Bicycles List</value>
   </data>
   <data name="marka" xml:space="preserve">
-    <value>Marka-Model</value>
+    <value>Brand-Model</value>
   </data>
   <data name="materyal" xml:space="preserve">
-    <value>Kadro Turu</value>
+    <value>Frame Type</value>
   </data>
   <data name="mekanik" xml:space="preserve">
-    <value>Mekanik Disk Fren</value>
+    <value>Mechanic Disc Brake</value>
   </data>
   <data name="mtb" xml:space="preserve">
-    <value>Dag</value>
+    <value>Mountain</value>
   </data>
   <data name="sehir" xml:space="preserve">
-    <value>Sehir</value>
+    <value>City</value>
   </data>
   <data name="siralama" xml:space="preserve">
-    <value>Bisiklet tablosunu siralamak icin basliklara tiklayin.</value>
+    <value>Click headers to sort bicycle table</value>
   </data>
   <data name="suspansiyon" xml:space="preserve">
-    <value>Suspansiyon</value>
+    <value>Suspensions</value>
   </data>
   <data name="tek" xml:space="preserve">
-    <value>Sadece  On</value>
+    <value>Only front</value>
   </data>
   <data name="v" xml:space="preserve">
-    <value>V-Fren</value>
+    <value>V-Brake</value>
   </data>
   <data name="vitessayisi" xml:space="preserve">
-    <value>Vites</value>
+    <value>Shift</value>
   </data>
   <data name="yok" xml:space="preserve">
-    <value>Yok</value>
+    <value>None</value>
   </data>
   <data name="yol" xml:space="preserve">
-    <value>Yol</value>
+    <value>Road</value>
   </data>
 </root>

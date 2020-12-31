@@ -121,6 +121,6 @@
     <value>Erisim Engellendi</value>
   </data>
   <data name="icerik" xml:space="preserve">
-    <value>Bu sayfayi goruntulemek icin yetkiniz yok</value>
+    <value>Bu sayfayi goruntulemek icin yetkiniz yok veya giris yapmaniz lazim.</value>
   </data>
 </root>

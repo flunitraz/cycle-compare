@@ -26,11 +26,22 @@
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                 <partial name="_LoginPartial" />
                 <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Bisiklet" asp-action="Index">Bisikletler</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @localizer["bis"]
+                        </a>
+                        <div class="dropdown-menu" style="background-color: #470520" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="nav-link" asp-area="" asp-controller="Bisiklet" asp-action="Index">@localizer["tbis"]</a>
+                            <a class="nav-link" asp-area="" asp-controller="Bisiklet" asp-action="DagBisikletleri">@localizer["dagbis"]</a>
+                            <a class="nav-link" asp-area="" asp-controller="Bisiklet" asp-action="YolBisikletleri">@localizer["yolbis"]</a>
+                            <a class="nav-link" asp-area="" asp-controller="Bisiklet" asp-action="SehirBisikletleri">@localizer["sehirbis"]</a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Favorilerim</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Karsilastirma</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Kadro Boyu Secimi</a>
                     </li>
                 </ul>
             </div>

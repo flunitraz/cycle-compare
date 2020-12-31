@@ -120,7 +120,22 @@
   <data name="anasayfa" xml:space="preserve">
     <value>Main Page</value>
   </data>
+  <data name="bis" xml:space="preserve">
+    <value>Bicycles</value>
+  </data>
+  <data name="dagbis" xml:space="preserve">
+    <value>Mountain bicycles</value>
+  </data>
   <data name="gizlilik" xml:space="preserve">
     <value>Privacy</value>
+  </data>
+  <data name="sehirbis" xml:space="preserve">
+    <value>City bicycles</value>
+  </data>
+  <data name="tbis" xml:space="preserve">
+    <value>All bicycles</value>
+  </data>
+  <data name="yolbis" xml:space="preserve">
+    <value>Road bicycles</value>
   </data>
 </root>

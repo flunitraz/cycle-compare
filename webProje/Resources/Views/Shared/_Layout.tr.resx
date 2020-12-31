@@ -120,7 +120,22 @@
   <data name="anasayfa" xml:space="preserve">
     <value>Anasayfa</value>
   </data>
+  <data name="bis" xml:space="preserve">
+    <value>Bisikletler</value>
+  </data>
+  <data name="dagbis" xml:space="preserve">
+    <value>Dag Bisikletleri</value>
+  </data>
   <data name="gizlilik" xml:space="preserve">
     <value>Gizlilik</value>
+  </data>
+  <data name="sehirbis" xml:space="preserve">
+    <value>Sehir Bisikletleri</value>
+  </data>
+  <data name="tbis" xml:space="preserve">
+    <value>Tum Bisikletler</value>
+  </data>
+  <data name="yolbis" xml:space="preserve">
+    <value>Yol Bisikletleri</value>
   </data>
 </root>
