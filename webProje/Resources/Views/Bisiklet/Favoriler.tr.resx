@@ -117,13 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="eklebis" xml:space="preserve">
-    <value>Add Cycle</value>
+  <data name="alu" xml:space="preserve">
+    <value>Aluminyum</value>
   </data>
-  <data name="roltanim" xml:space="preserve">
-    <value>Recongize Role</value>
+  <data name="cift" xml:space="preserve">
+    <value>Cift Suspansiyon</value>
   </data>
-  <data name="userlist" xml:space="preserve">
-    <value>User List</value>
+  <data name="fotograf" xml:space="preserve">
+    <value>Fotograf</value>
+  </data>
+  <data name="frenturu" xml:space="preserve">
+    <value>Fren Sistemi</value>
+  </data>
+  <data name="hidrolik" xml:space="preserve">
+    <value>Hidrolik Disk Fren</value>
+  </data>
+  <data name="jantcapi" xml:space="preserve">
+    <value>Jant Boyutu</value>
+  </data>
+  <data name="karbon" xml:space="preserve">
+    <value>Karbon</value>
+  </data>
+  <data name="kullanimalani" xml:space="preserve">
+    <value>Kullanim</value>
+  </data>
+  <data name="liste" xml:space="preserve">
+    <value>Bisiklet Listesi</value>
+  </data>
+  <data name="marka" xml:space="preserve">
+    <value>Marka-Model</value>
+  </data>
+  <data name="materyal" xml:space="preserve">
+    <value>Kadro Turu</value>
+  </data>
+  <data name="mekanik" xml:space="preserve">
+    <value>Mekanik Disk Fren</value>
+  </data>
+  <data name="mtb" xml:space="preserve">
+    <value>Dag</value>
+  </data>
+  <data name="sehir" xml:space="preserve">
+    <value>Sehir</value>
+  </data>
+  <data name="siralama" xml:space="preserve">
+    <value>Bisiklet tablosunu siralamak icin basliklara tiklayin.</value>
+  </data>
+  <data name="suspansiyon" xml:space="preserve">
+    <value>Suspansiyon</value>
+  </data>
+  <data name="tek" xml:space="preserve">
+    <value>Sadece  On</value>
+  </data>
+  <data name="v" xml:space="preserve">
+    <value>V-Fren</value>
+  </data>
+  <data name="vitessayisi" xml:space="preserve">
+    <value>Vites</value>
+  </data>
+  <data name="yok" xml:space="preserve">
+    <value>Yok</value>
+  </data>
+  <data name="yol" xml:space="preserve">
+    <value>Yol</value>
   </data>
 </root>

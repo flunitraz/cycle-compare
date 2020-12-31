@@ -1,0 +1,22 @@
+﻿table {
+    width: 100%;
+    border: 1px solid black;
+}
+
+th {
+    cursor: pointer;
+    height: 40px;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+td {
+    height: 30px;
+}
+
+tr:nth-child(even) {
+    background-color: transparent;
+}

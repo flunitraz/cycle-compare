@@ -27,6 +27,13 @@ namespace webProje.Controllers
             return View(bisikletListe);
         }
 
+        [Authorize(Roles = "User")]
+        public IActionResult Favoriler()
+        {
+            List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.ToList();
+            return View(bisikletListe);
+        }
+
         public IActionResult DagBisikletleri()
         {
             //IdentityUser kullanici;

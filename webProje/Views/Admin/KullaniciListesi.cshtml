@@ -1,66 +1,41 @@
-﻿@model List<Bisiklet>
+﻿@model List<Microsoft.AspNetCore.Identity.IdentityUser>
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
 
 <head>
-    <link rel="stylesheet" href="~/css/bisiklet.css" />
-    <link rel="stylesheet" href="~/js/bisiklet.js" />
+    <link rel="stylesheet" href="~/css/kullanicilar.css" />
 </head>
 
 <body>
     <h1>
         @localizer["liste"]
     </h1>
-    <h6>
-        @localizer["siralama"]
-    </h6>
     <table id="myTable" class="border-dark">
         <tr>
             <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
-            <th onclick="sortTable(0)">@localizer["fotograf"]</th>
-            <th onclick="sortTable(1)">@localizer["marka"]</th>
-            <th onclick="sortTable(2)">@localizer["jantcapi"]</th>
-            <th onclick="sortTable(3)">@localizer["materyal"]</th>
-            <th onclick="sortTable(4)">@localizer["vitessayisi"]</th>
-            <th onclick="sortTable(5)">@localizer["kullanimalani"]</th>
-            <th onclick="sortTable(6)">@localizer["frenturu"]</th>
-            <th onclick="sortTable(7)">@localizer["suspansiyon"]</th>
+            <th onclick="sortTable(0)">@localizer["id"]</th>
+            <th onclick="sortTable(1)">@localizer["phone"]</th>
+            <th onclick="sortTable(2)">@localizer["phone"]</th>
+
         </tr>
 
-        @foreach (var bisiklet in Model)
+        @foreach (var kullanici in Model)
         {
-            <tr>
-                <td>
-                    <img src="~/@bisiklet.ID-.png" height=200 width=300 />
-                </td>
-                <td>
-                    @localizer[bisiklet.Marka] @bisiklet.Model
-                </td>
-                <td>
-                    @bisiklet.JantCapi
-                </td>
-                <td>
-                    @localizer[bisiklet.Materyal]
-                </td>
-                <td>
-                    @bisiklet.VitesSayisi
-                </td>
-                <td>
-                    @localizer[bisiklet.KullanimAlani]
-                </td>
-                <td>
-                    @localizer[bisiklet.FrenTuru]
-                </td>
-                <td>
-                    @localizer[bisiklet.SuspansiyonTuru]
-                </td>
-                <td>
-                    add
-                </td>
-            </tr>
+    <tr>
+        <td>
+            @kullanici.Id;
+        </td>
+        <td>
+            @kullanici.UserName;
+        </td>
+        <td>
+            @kullanici.PhoneNumber;
+        </td>
+    </tr>
 
         }
     </table>
 </body>
+<a style="background-color: #470520" type="button" class="btn btn-dark btn-lg btn-block" asp-area="" asp-controller="Admin" asp-action="Index">@localizer["geri"]</a>
 <script>
     function sortTable(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;

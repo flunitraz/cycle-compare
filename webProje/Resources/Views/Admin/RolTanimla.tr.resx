@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="eklebis" xml:space="preserve">
-    <value>Add Cycle</value>
+  <data name="role" xml:space="preserve">
+    <value>Rol Id</value>
   </data>
-  <data name="roltanim" xml:space="preserve">
-    <value>Recongize Role</value>
+  <data name="tanim" xml:space="preserve">
+    <value>Tanimlama</value>
   </data>
-  <data name="userlist" xml:space="preserve">
-    <value>User List</value>
+  <data name="user" xml:space="preserve">
+    <value>Kullanici Id</value>
   </data>
 </root>

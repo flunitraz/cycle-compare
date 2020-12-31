@@ -3,9 +3,17 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-one-page-wonder/blob/master/LICENSE)
  */
-
+html {
+    min-height: 100%;
+    position: relative;
+}
 body {
-  font-family: 'Lato';
+    min-height: 100%;
+    font-family: 'Lato';
+    background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
 }
 
 a {
@@ -74,15 +82,12 @@ h6 {
 }
 
 header.masthead {
-  position: relative;
-  overflow: hidden;
-  padding-top: calc(7rem + 72px);
-  padding-bottom: 7rem;
-  background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: scroll;
-  background-size: cover;
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(7rem + 72px);
+    padding-bottom: 7rem;
+
+    min-height: 100%;
 }
 
 header.masthead .masthead-content {
@@ -98,12 +103,13 @@ header.masthead .masthead-content .masthead-subheading {
   font-size: 2rem;
 }
 
-header.masthead .bg-circle {
-  z-index: 0;
-  position: absolute;
-  border-radius: 100%;
-  background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);
-}
+    header.masthead .bg-circlef {
+        z-index: 0;
+        position: absolute;
+        border-radius: 100%;
+        background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);
+        min-height: 100%;
+    }
 
 header.masthead .bg-circle-1 {
   height: 90rem;
@@ -177,50 +183,12 @@ header.masthead .bg-circle-4 {
 .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
 }
-table {
-    border-spacing: 0;
+.footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    border: 1px solid #ddd;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
 }
-
-th {
-    cursor: pointer;
-}
-
-th, td {
-    text-align: left;
-    padding: 16px;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2
-}
-
-.filterable {
-    margin-top: 15px;
-}
-
-    .filterable .panel-heading .pull-right {
-        margin-top: -20px;
-    }
-
-    .filterable .filters input[disabled] {
-        background-color: transparent;
-        border: none;
-        cursor: auto;
-        box-shadow: none;
-        padding: 0;
-        height: auto;
-    }
-
-        .filterable .filters input[disabled]::-webkit-input-placeholder {
-            color: #333;
-        }
-
-        .filterable .filters input[disabled]::-moz-placeholder {
-            color: #333;
-        }
-
-        .filterable .filters input[disabled]:-ms-input-placeholder {
-            color: #333;
-        }

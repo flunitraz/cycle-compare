@@ -117,13 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="eklebis" xml:space="preserve">
-    <value>Add Cycle</value>
+  <data name="add" xml:space="preserve">
+    <value>Add</value>
   </data>
-  <data name="roltanim" xml:space="preserve">
-    <value>Recongize Role</value>
+  <data name="frenturu" xml:space="preserve">
+    <value>Brake System</value>
   </data>
-  <data name="userlist" xml:space="preserve">
-    <value>User List</value>
+  <data name="jantcapi" xml:space="preserve">
+    <value>Rim Inches</value>
+  </data>
+  <data name="kullanimalani" xml:space="preserve">
+    <value>Usage</value>
+  </data>
+  <data name="marka" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="materyal" xml:space="preserve">
+    <value>Frame Type</value>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="suspansiyonturu" xml:space="preserve">
+    <value>Suspension Type</value>
+  </data>
+  <data name="vites" xml:space="preserve">
+    <value>Shift</value>
   </data>
 </root>
