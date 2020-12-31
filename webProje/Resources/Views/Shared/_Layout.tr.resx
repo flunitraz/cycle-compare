@@ -129,6 +129,12 @@
   <data name="gizlilik" xml:space="preserve">
     <value>Gizlilik</value>
   </data>
+  <data name="kadroboyu" xml:space="preserve">
+    <value>Kadro Boyu</value>
+  </data>
+  <data name="karsilastirma" xml:space="preserve">
+    <value>Karsilastirma</value>
+  </data>
   <data name="sehirbis" xml:space="preserve">
     <value>Sehir Bisikletleri</value>
   </data>

@@ -27,6 +27,11 @@ namespace webProje.Controllers
             return View(bisikletListe);
         }
 
+        public IActionResult KadroBoyu()
+        {
+            return View();
+        }
+
         [Authorize(Roles = "User")]
         public IActionResult Favoriler()
         {

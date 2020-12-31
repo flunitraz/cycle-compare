@@ -129,6 +129,12 @@
   <data name="gizlilik" xml:space="preserve">
     <value>Privacy</value>
   </data>
+  <data name="kadroboyu" xml:space="preserve">
+    <value>Frame Size</value>
+  </data>
+  <data name="karsilastirma" xml:space="preserve">
+    <value>Comparison</value>
+  </data>
   <data name="sehirbis" xml:space="preserve">
     <value>City bicycles</value>
   </data>

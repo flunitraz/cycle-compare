@@ -192,3 +192,6 @@ header.masthead .bg-circle-4 {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
 }
+.carousel-item img {
+    margin: auto;
+}

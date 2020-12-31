@@ -117,22 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bisiklet" xml:space="preserve">
-    <value>Cycle</value>
+  <data name="bacakboy" xml:space="preserve">
+    <value>Ic Bacak Boyu</value>
   </data>
-  <data name="bisikleticerik" xml:space="preserve">
-    <value>Fint best cycle for you</value>
+  <data name="boy" xml:space="preserve">
+    <value>Boy</value>
+  </data>
+  <data name="cm" xml:space="preserve">
+    <value>Santimetre</value>
+  </data>
+  <data name="dag" xml:space="preserve">
+    <value>Dag Bisikleti Icin Kadro Boyu Hesaplama Tablosu</value>
+  </data>
+  <data name="feetinch" xml:space="preserve">
+    <value>Fit / Inc</value>
+  </data>
+  <data name="inc" xml:space="preserve">
+    <value>Inc</value>
   </data>
   <data name="kadroboyu" xml:space="preserve">
-    <value>Frame Size</value>
+    <value>Kadro Boyu</value>
   </data>
-  <data name="kadroboyuicerik" xml:space="preserve">
-    <value>Find the right frame size for you</value>
+  <data name="sehir" xml:space="preserve">
+    <value>Sehir Bisikleti Icin Kadro Boyu Hesaplama Tablosu</value>
   </data>
-  <data name="karsilastir" xml:space="preserve">
-    <value>Comparison</value>
+  <data name="tavsiye" xml:space="preserve">
+    <value>Tavsiye Edilen Kadro Boyu</value>
   </data>
-  <data name="karsilastiricerik" xml:space="preserve">
-    <value>Compare the features of chosen bikes</value>
+  <data name="yol" xml:space="preserve">
+    <value>Yol Bisikleti Icin Kadro Boyu Hesaplama Tablosu</value>
   </data>
 </root>
