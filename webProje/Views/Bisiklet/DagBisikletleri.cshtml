@@ -1,63 +1,80 @@
-﻿@model List<Bisiklet>
+﻿@model webProje.Models.ViewModel
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@using Microsoft.AspNetCore.Identity
 
-<head>
-    <link rel="stylesheet" href="~/css/bisiklet.css" />
-    <link rel="stylesheet" href="~/js/bisiklet.js" />
-</head>
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
-<body>
-    <h1>
-        @localizer["liste"]
-    </h1>
-    <h6>
-        @localizer["siralama"]
-    </h6>
-    <table id="myTable" class="border-dark">
-        <tr>
-            <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
-            <th onclick="sortTable(0)">@localizer["fotograf"]</th>
-            <th onclick="sortTable(1)">@localizer["marka"]</th>
-            <th onclick="sortTable(2)">@localizer["jantcapi"]</th>
-            <th onclick="sortTable(3)">@localizer["materyal"]</th>
-            <th onclick="sortTable(4)">@localizer["vitessayisi"]</th>
-            <th onclick="sortTable(5)">@localizer["kullanimalani"]</th>
-            <th onclick="sortTable(6)">@localizer["frenturu"]</th>
-            <th onclick="sortTable(7)">@localizer["suspansiyon"]</th>
-        </tr>
+    <head>
+        <link rel="stylesheet" href="~/css/bisiklet.css" />
+        <link rel="stylesheet" href="~/js/bisiklet.js" />
+    </head>
 
-        @foreach (var bisiklet in Model)
-        {
+    <body>
+        <h1>
+            @localizer["liste"]
+        </h1>
+        <h6>
+            @localizer["siralama"]
+        </h6>
+        <table id="myTable" class="border-dark">
             <tr>
-                <td>
-                    <img src="~/@bisiklet.ID-.png" height=200 width=300 />
-                </td>
-                <td>
-                    @localizer[bisiklet.Marka] @bisiklet.Model
-                </td>
-                <td>
-                    @bisiklet.JantCapi
-                </td>
-                <td>
-                    @localizer[bisiklet.Materyal]
-                </td>
-                <td>
-                    @bisiklet.VitesSayisi
-                </td>
-                <td>
-                    @localizer[bisiklet.KullanimAlani]
-                </td>
-                <td>
-                    @localizer[bisiklet.FrenTuru]
-                </td>
-                <td>
-                    @localizer[bisiklet.SuspansiyonTuru]
-                </td>
-                <td>
-                    add
-                </td>
+                <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+                <th onclick="sortTable(0)">@localizer["fotograf"]</th>
+                <th onclick="sortTable(1)">@localizer["marka"]</th>
+                <th onclick="sortTable(2)">@localizer["jantcapi"]</th>
+                <th onclick="sortTable(3)">@localizer["materyal"]</th>
+                <th onclick="sortTable(4)">@localizer["vitessayisi"]</th>
+                <th onclick="sortTable(5)">@localizer["kullanimalani"]</th>
+                <th onclick="sortTable(6)">@localizer["frenturu"]</th>
+                <th onclick="sortTable(7)">@localizer["suspansiyon"]</th>
             </tr>
+            @foreach (var bisiklet in Model.BisikletVM)
+            {
+                <tr>
+                    <td>
+                        <img src="~/@bisiklet.ID-.png" height=200 width=300 />
+                    </td>
+                    <td>
+                        @localizer[bisiklet.Marka] @bisiklet.Model
+                    </td>
+                    <td>
+                        @bisiklet.JantCapi
+                    </td>
+                    <td>
+                        @localizer[bisiklet.Materyal]
+                    </td>
+                    <td>
+                        @bisiklet.VitesSayisi
+                    </td>
+                    <td>
+                        @localizer[bisiklet.KullanimAlani]
+                    </td>
+                    <td>
+                        @localizer[bisiklet.FrenTuru]
+                    </td>
+                    <td>
+                        @localizer[bisiklet.SuspansiyonTuru]
+                    </td>
+                    <td>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            int BisikletId = bisiklet.ID;                         //veritabanina aktarilmasi gereken bisiklet id
+                            var KullaniciId = UserManager.GetUserId(User);         //veritabanina aktarilmaasi gereken user id
 
-        }
-    </table>
-</body>
+                            <form asp-action="FavorilereEkle" method="post">
+                                <div class="form-group">
+                                    <input class="form-control" name="KullaniciId" value="@KullaniciId"/>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="BisikletId" value="@BisikletId" />
+                                </div>
+                                <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="favorilere ekle" />
+
+                                </form>
+                                }
+                        </td>
+                </tr>
+            }
+        </table>
+    </body>

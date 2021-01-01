@@ -24,7 +24,11 @@ namespace webProje.Controllers
         public IActionResult Index()
         {
             List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.ToList();
-            return View(bisikletListe);
+
+            ViewModel vm = new ViewModel();
+            vm.BisikletVM = bisikletListe.ToList();
+
+            return View(vm);
         }
 
         public IActionResult KadroBoyu()
@@ -32,35 +36,50 @@ namespace webProje.Controllers
             return View();
         }
 
-        [Authorize(Roles = "User")]
-        public IActionResult Favoriler()
-        {
-            List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.ToList();
-            return View(bisikletListe);
-        }
-
         public IActionResult DagBisikletleri()
         {
-            //IdentityUser kullanici;
             List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.Where(
                 dbBisiklet => dbBisiklet.KullanimAlani.Contains("mtb")).ToList();
-            return View(bisikletListe);
+
+            var favoriler = dbBisiklet.KullaniciFavorileri.ToList();
+
+            ViewModel vm = new ViewModel();
+            vm.BisikletVM = bisikletListe.ToList();
+            return View(vm);
         }
 
         public IActionResult YolBisikletleri()
         {
-            //IdentityUser kullanici;
             List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.Where(
                 dbBisiklet => dbBisiklet.KullanimAlani.Contains("yol")).ToList();
-            return View(bisikletListe);
+
+            ViewModel vm = new ViewModel();
+            vm.BisikletVM = bisikletListe.ToList();
+
+            return View(vm);
         }
 
         public IActionResult SehirBisikletleri()
         {
-            //IdentityUser kullanici;
             List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.Where(
                 dbBisiklet => dbBisiklet.KullanimAlani.Contains("sehir")).ToList();
-            return View(bisikletListe);
+
+            ViewModel vm = new ViewModel();
+            vm.BisikletVM = bisikletListe.ToList();
+
+            return View(vm);
+        }
+
+        public IActionResult FavorilereEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult FavorilereEkle([Bind("KullaniciId", "BisikletId")] KullaniciFavori a)
+        {
+            dbBisiklet.Add(a);
+            dbBisiklet.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

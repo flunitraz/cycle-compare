@@ -1,4 +1,4 @@
-﻿@model List<Bisiklet>
+﻿@model webProje.Models.ViewModel
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
 
 <head>
@@ -26,7 +26,7 @@
             <th onclick="sortTable(7)">@localizer["suspansiyon"]</th>
         </tr>
 
-        @foreach (var bisiklet in Model)
+        @foreach (var bisiklet in Model.BisikletVM)
         {
             <tr>
                 <td>

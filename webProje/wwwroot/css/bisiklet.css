@@ -9,12 +9,16 @@ th {
 }
 
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 16px;
 }
 
 td {
     height: 200px;
+}
+
+a {
+    color:brown;
 }
 
 tr:nth-child(even) {
