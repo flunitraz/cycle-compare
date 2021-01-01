@@ -1,5 +1,9 @@
 ﻿@model webProje.Models.ViewModel
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 <head>
     <link rel="stylesheet" href="~/css/bisiklet.css" />
@@ -54,10 +58,92 @@
                     @localizer[bisiklet.SuspansiyonTuru]
                 </td>
                 <td>
-                    add
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        int BisikletId = bisiklet.ID;
+                        var KullaniciId = UserManager.GetUserId(User);
+
+                        <form asp-action="FavorilereEkle" method="post">
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="KullaniciId" value="@KullaniciId" />
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="BisikletId" value="@BisikletId" />
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="KullanimAlani" value="@bisiklet.KullanimAlani" />
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="Marka" value="@bisiklet.Marka" />
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="Model" value="@bisiklet.Model" />
+                            </div>
+
+
+                            <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["favekle"]" />
+
+                        </form>
+                    }
                 </td>
             </tr>
 
         }
     </table>
 </body>
+<script>
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("myTable");
+        switching = true;
+        //Set the sorting direction to ascending:
+        dir = "asc";
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+                //start by saying there should be no switching:
+                shouldSwitch = false;
+                /*Get the two elements you want to compare,
+                one from current row and one from the next:*/
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /*check if the two rows should switch place,
+                based on the direction, asc or desc:*/
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                /*If a switch has been marked, make the switch
+                and mark that a switch has been done:*/
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                //Each time a switch is done, increase this count by 1:
+                switchcount++;
+            } else {
+                /*If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again.*/
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+</script>

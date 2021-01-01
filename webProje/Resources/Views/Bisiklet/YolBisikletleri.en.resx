@@ -123,6 +123,9 @@
   <data name="cift" xml:space="preserve">
     <value>Dual Suspension</value>
   </data>
+  <data name="favekle" xml:space="preserve">
+    <value>Add to favorities</value>
+  </data>
   <data name="fotograf" xml:space="preserve">
     <value>Photo</value>
   </data>

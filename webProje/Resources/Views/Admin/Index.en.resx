@@ -123,6 +123,9 @@
   <data name="roltanim" xml:space="preserve">
     <value>Recongize Role</value>
   </data>
+  <data name="silbis" xml:space="preserve">
+    <value>Delete Cycle</value>
+  </data>
   <data name="userlist" xml:space="preserve">
     <value>User List</value>
   </data>

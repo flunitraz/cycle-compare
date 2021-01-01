@@ -70,16 +70,38 @@ namespace webProje.Controllers
             return View(vm);
         }
 
+        public IActionResult Favoriler()
+        {
+            var bisikletListe = dbBisiklet.KullaniciFavorileri.ToList();
+
+            ViewModel vm = new ViewModel();
+            vm.KullaniciFavoriVM = bisikletListe.ToList();
+            return View(vm);
+        }
+
         public IActionResult FavorilereEkle()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult FavorilereEkle([Bind("KullaniciId", "BisikletId")] KullaniciFavori a)
+        public IActionResult FavorilereEkle([Bind("KullaniciId", "BisikletId", "KullanimAlani", "Marka", "Model")] KullaniciFavori a)
         {
             dbBisiklet.Add(a);
             dbBisiklet.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Favoriler");
+        }
+
+        public IActionResult FavoriCikar()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult FavoriCikar(KullaniciFavori fav)
+        {
+            var dbFav = dbBisiklet.KullaniciFavorileri.Find(fav.FavId);
+            dbBisiklet.KullaniciFavorileri.Remove(dbFav);
+            dbBisiklet.SaveChanges();
+            return RedirectToAction("Favoriler");
         }
     }
 }

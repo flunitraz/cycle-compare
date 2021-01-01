@@ -14,6 +14,9 @@ namespace webProje.Models
         public int FavId { get; set; }
         public string KullaniciId { get; set; }
         public int BisikletId { get; set; }
+        public string Marka { get; set; }
+        public string Model { get; set; }
+        public string KullanimAlani { get; set; }
 
         [ForeignKey("KullaniciId")]
         public virtual Microsoft.AspNetCore.Identity.IdentityUser Id { get; set; }

@@ -123,11 +123,17 @@
   <data name="cift" xml:space="preserve">
     <value>Dual Suspension</value>
   </data>
+  <data name="cikar" xml:space="preserve">
+    <value>Remove from favorities</value>
+  </data>
   <data name="fotograf" xml:space="preserve">
     <value>Photo</value>
   </data>
   <data name="frenturu" xml:space="preserve">
     <value>Brake System</value>
+  </data>
+  <data name="girisyap" xml:space="preserve">
+    <value>You must log in to use this feature.</value>
   </data>
   <data name="hidrolik" xml:space="preserve">
     <value>Hyduralic Disc Brake</value>
@@ -145,13 +151,16 @@
     <value>Bicycle List</value>
   </data>
   <data name="marka" xml:space="preserve">
-    <value>Brand-Model</value>
+    <value>Brand</value>
   </data>
   <data name="materyal" xml:space="preserve">
     <value>Frame Type</value>
   </data>
   <data name="mekanik" xml:space="preserve">
     <value>Mechanic Disc Brake</value>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>Model</value>
   </data>
   <data name="mtb" xml:space="preserve">
     <value>Mountain</value>

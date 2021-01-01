@@ -126,6 +126,9 @@
   <data name="dagbis" xml:space="preserve">
     <value>Mountain bicycles</value>
   </data>
+  <data name="favoriler" xml:space="preserve">
+    <value>Favorities</value>
+  </data>
   <data name="gizlilik" xml:space="preserve">
     <value>Privacy</value>
   </data>

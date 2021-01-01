@@ -123,6 +123,9 @@
   <data name="cift" xml:space="preserve">
     <value>Cift Suspansiyon</value>
   </data>
+  <data name="favekle" xml:space="preserve">
+    <value>Favorilere ekle</value>
+  </data>
   <data name="fotograf" xml:space="preserve">
     <value>Fotograf</value>
   </data>

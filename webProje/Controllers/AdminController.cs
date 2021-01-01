@@ -57,5 +57,18 @@ namespace webProje.Controllers
             dbBisiklet.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Delete(Bisiklet bis)
+        {
+            var dbBis = dbBisiklet.Bisikletler.Find(bis.ID);
+            dbBisiklet.Bisikletler.Remove(dbBis);
+            dbBisiklet.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

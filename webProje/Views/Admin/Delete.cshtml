@@ -1,0 +1,13 @@
+﻿@model Bisiklet
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Delete" method="post">
+            <div class="form-group">
+                <label>@localizer["id"]</label>
+                <input class="form-control" asp-for="ID" />
+            </div>
+            <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["sil"]" />
+        </form>
+    </div>
+</div>

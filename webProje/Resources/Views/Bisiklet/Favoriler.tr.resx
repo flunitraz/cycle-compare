@@ -123,11 +123,17 @@
   <data name="cift" xml:space="preserve">
     <value>Cift Suspansiyon</value>
   </data>
+  <data name="cikar" xml:space="preserve">
+    <value>Favorilerden cikart</value>
+  </data>
   <data name="fotograf" xml:space="preserve">
     <value>Fotograf</value>
   </data>
   <data name="frenturu" xml:space="preserve">
     <value>Fren Sistemi</value>
+  </data>
+  <data name="girisyap" xml:space="preserve">
+    <value>Bu ozelligi kullanabilmek icin giris yapmaniz gerekmektedir.</value>
   </data>
   <data name="hidrolik" xml:space="preserve">
     <value>Hidrolik Disk Fren</value>
@@ -145,13 +151,16 @@
     <value>Bisiklet Listesi</value>
   </data>
   <data name="marka" xml:space="preserve">
-    <value>Marka-Model</value>
+    <value>Marka</value>
   </data>
   <data name="materyal" xml:space="preserve">
     <value>Kadro Turu</value>
   </data>
   <data name="mekanik" xml:space="preserve">
     <value>Mekanik Disk Fren</value>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>Model</value>
   </data>
   <data name="mtb" xml:space="preserve">
     <value>Dag</value>

@@ -123,6 +123,9 @@
   <data name="roltanim" xml:space="preserve">
     <value>Rol Tanimla</value>
   </data>
+  <data name="silbis" xml:space="preserve">
+    <value>Bisikleti Sil</value>
+  </data>
   <data name="userlist" xml:space="preserve">
     <value>Kullanici Listesi</value>
   </data>
