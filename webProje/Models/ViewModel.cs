@@ -10,5 +10,7 @@ namespace webProje.Models
         public IEnumerable<Bisiklet> BisikletVM { get; set; }
 
         public IEnumerable<KullaniciFavori> KullaniciFavoriVM { get; set; }
+
+        public IEnumerable<Karsilastirma> KarsilastirmaVM { get; set; }
     }
 }

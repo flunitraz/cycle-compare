@@ -16,5 +16,6 @@ namespace webProje.Data
 
         public DbSet<Bisiklet> Bisikletler { get; set; }
         public DbSet<KullaniciFavori> KullaniciFavorileri { get; set; }
+        public DbSet<Karsilastirma> Karsilastirmalar { get; set; }
     }
 }

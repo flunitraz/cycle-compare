@@ -141,6 +141,9 @@
   <data name="karbon" xml:space="preserve">
     <value>Karbon</value>
   </data>
+  <data name="karsekle" xml:space="preserve">
+    <value>Karsilastir</value>
+  </data>
   <data name="kullanimalani" xml:space="preserve">
     <value>Kullanim</value>
   </data>

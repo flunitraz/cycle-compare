@@ -5,62 +5,62 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
-    <head>
-        <link rel="stylesheet" href="~/css/bisiklet.css" />
-        <link rel="stylesheet" href="~/js/bisiklet.js" />
-    </head>
+<head>
+    <link rel="stylesheet" href="~/css/bisiklet.css" />
+    <link rel="stylesheet" href="~/js/bisiklet.js" />
+</head>
 
-    <body>
-        <h1>
-            @localizer["liste"]
-        </h1>
-        <h6>
-            @localizer["siralama"]
-        </h6>
-        <table id="myTable" class="border-dark">
+<body>
+    <h1>
+        @localizer["liste"]
+    </h1>
+    <h6>
+        @localizer["siralama"]
+    </h6>
+    <table id="myTable" class="border-dark">
+        <tr>
+            <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+            <th onclick="sortTable(0)">@localizer["fotograf"]</th>
+            <th onclick="sortTable(1)">@localizer["marka"]</th>
+            <th onclick="sortTable(2)">@localizer["jantcapi"]</th>
+            <th onclick="sortTable(3)">@localizer["materyal"]</th>
+            <th onclick="sortTable(4)">@localizer["vitessayisi"]</th>
+            <th onclick="sortTable(5)">@localizer["kullanimalani"]</th>
+            <th onclick="sortTable(6)">@localizer["frenturu"]</th>
+            <th onclick="sortTable(7)">@localizer["suspansiyon"]</th>
+        </tr>
+        @foreach (var bisiklet in Model.BisikletVM)
+        {
             <tr>
-                <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
-                <th onclick="sortTable(0)">@localizer["fotograf"]</th>
-                <th onclick="sortTable(1)">@localizer["marka"]</th>
-                <th onclick="sortTable(2)">@localizer["jantcapi"]</th>
-                <th onclick="sortTable(3)">@localizer["materyal"]</th>
-                <th onclick="sortTable(4)">@localizer["vitessayisi"]</th>
-                <th onclick="sortTable(5)">@localizer["kullanimalani"]</th>
-                <th onclick="sortTable(6)">@localizer["frenturu"]</th>
-                <th onclick="sortTable(7)">@localizer["suspansiyon"]</th>
-            </tr>
-            @foreach (var bisiklet in Model.BisikletVM)
-            {
-                <tr>
-                    <td>
-                        <img src="~/@bisiklet.ID-.png" height=200 width=300 />
-                    </td>
-                    <td>
-                        @localizer[bisiklet.Marka] @bisiklet.Model
-                    </td>
-                    <td>
-                        @bisiklet.JantCapi
-                    </td>
-                    <td>
-                        @localizer[bisiklet.Materyal]
-                    </td>
-                    <td>
-                        @bisiklet.VitesSayisi
-                    </td>
-                    <td>
-                        @localizer[bisiklet.KullanimAlani]
-                    </td>
-                    <td>
-                        @localizer[bisiklet.FrenTuru]
-                    </td>
-                    <td>
-                        @localizer[bisiklet.SuspansiyonTuru]
-                    </td>
-                    <td>
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            int BisikletId = bisiklet.ID;
-                            var KullaniciId = UserManager.GetUserId(User);
+                <td>
+                    <img src="~/@bisiklet.ID-.png" height=200 width=300 />
+                </td>
+                <td>
+                    @localizer[bisiklet.Marka] @bisiklet.Model
+                </td>
+                <td>
+                    @bisiklet.JantCapi
+                </td>
+                <td>
+                    @localizer[bisiklet.Materyal]
+                </td>
+                <td>
+                    @bisiklet.VitesSayisi
+                </td>
+                <td>
+                    @localizer[bisiklet.KullanimAlani]
+                </td>
+                <td>
+                    @localizer[bisiklet.FrenTuru]
+                </td>
+                <td>
+                    @localizer[bisiklet.SuspansiyonTuru]
+                </td>
+                <td>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        int BisikletId = bisiklet.ID;
+                        var KullaniciId = UserManager.GetUserId(User);
 
                         <form asp-action="FavorilereEkle" method="post">
                             <div class="form-group">
@@ -78,70 +78,105 @@
                             <div class="form-group">
                                 <input type="hidden" class="form-control" name="Model" value="@bisiklet.Model" />
                             </div>
-
-
                             <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["favekle"]" />
-
                         </form>
-                                }
-                        </td>
-                </tr>
-            }
-        </table>
-    </body>
-    <script>
-        function sortTable(n) {
-            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-            table = document.getElementById("myTable");
-            switching = true;
-            //Set the sorting direction to ascending:
-            dir = "asc";
-            /*Make a loop that will continue until
-            no switching has been done:*/
-            while (switching) {
-                //start by saying: no switching is done:
-                switching = false;
-                rows = table.rows;
-                /*Loop through all table rows (except the
-                first, which contains table headers):*/
-                for (i = 1; i < (rows.length - 1); i++) {
-                    //start by saying there should be no switching:
-                    shouldSwitch = false;
-                    /*Get the two elements you want to compare,
-                    one from current row and one from the next:*/
-                    x = rows[i].getElementsByTagName("TD")[n];
-                    y = rows[i + 1].getElementsByTagName("TD")[n];
-                    /*check if the two rows should switch place,
-                    based on the direction, asc or desc:*/
-                    if (dir == "asc") {
-                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                            //if so, mark as a switch and break the loop:
-                            shouldSwitch = true;
-                            break;
-                        }
-                    } else if (dir == "desc") {
-                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                            //if so, mark as a switch and break the loop:
-                            shouldSwitch = true;
-                            break;
-                        }
+                    }
+                    @{
+                        var request = Context.Connection.RemoteIpAddress;
+                     }
+                <form asp-action="KarsilastirmayaEkle" method="post">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="KullaniciIp" value="@request" />
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="BisikletId" value="@bisiklet.ID" />
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="Marka" value="@bisiklet.Marka" />
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="Model" value="@bisiklet.Model" />
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="Jantcapi" value="@bisiklet.JantCapi" />
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="Materyal" value="@bisiklet.Materyal" />
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="VitesSayisi" value="@bisiklet.VitesSayisi" />
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="KullanimAlani" value="@bisiklet.KullanimAlani" />
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="FrenTuru" value="@bisiklet.FrenTuru" />
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="SuspansiyonTuru" value="@bisiklet.SuspansiyonTuru" />
+                    </div>
+
+                    <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["karsekle"]" />
+
+                </form>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+<script>
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("myTable");
+        switching = true;
+        //Set the sorting direction to ascending:
+        dir = "asc";
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+                //start by saying there should be no switching:
+                shouldSwitch = false;
+                /*Get the two elements you want to compare,
+                one from current row and one from the next:*/
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /*check if the two rows should switch place,
+                based on the direction, asc or desc:*/
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
                     }
                 }
-                if (shouldSwitch) {
-                    /*If a switch has been marked, make the switch
-                    and mark that a switch has been done:*/
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            }
+            if (shouldSwitch) {
+                /*If a switch has been marked, make the switch
+                and mark that a switch has been done:*/
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                //Each time a switch is done, increase this count by 1:
+                switchcount++;
+            } else {
+                /*If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again.*/
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
                     switching = true;
-                    //Each time a switch is done, increase this count by 1:
-                    switchcount++;
-                } else {
-                    /*If no switching has been done AND the direction is "asc",
-                    set the direction to "desc" and run the while loop again.*/
-                    if (switchcount == 0 && dir == "asc") {
-                        dir = "desc";
-                        switching = true;
-                    }
                 }
             }
         }
-    </script>
+    }
+</script>

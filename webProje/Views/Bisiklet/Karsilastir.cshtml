@@ -29,12 +29,16 @@
             <th onclick="sortTable(6)">@localizer["frenturu"]</th>
             <th onclick="sortTable(7)">@localizer["suspansiyon"]</th>
         </tr>
+        @{
+            var request = Convert.ToString(Context.Connection.RemoteIpAddress);
+            var Kars = Model.KarsilastirmaVM.Where(x => x.KullaniciIp == (request));
+        }
 
-        @foreach (var bisiklet in Model.BisikletVM)
+        @foreach (var bisiklet in Kars)
         {
             <tr>
                 <td>
-                    <img src="~/@bisiklet.ID-.png" height=200 width=300 />
+                    <img src="~/@bisiklet.BisikletId-.png" height=200 width=300 />
                 </td>
                 <td>
                     @localizer[bisiklet.Marka] @bisiklet.Model
@@ -58,30 +62,12 @@
                     @localizer[bisiklet.SuspansiyonTuru]
                 </td>
                 <td>
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        int BisikletId = bisiklet.ID;
-                        var KullaniciId = UserManager.GetUserId(User);
-
-                        <form asp-action="FavorilereEkle" method="post">
-                            <div class="form-group">
-                                <input type="hidden" class="form-control" name="KullaniciId" value="@KullaniciId" />
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" class="form-control" name="BisikletId" value="@BisikletId" />
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" class="form-control" name="KullanimAlani" value="@bisiklet.KullanimAlani" />
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" class="form-control" name="Marka" value="@bisiklet.Marka" />
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" class="form-control" name="Model" value="@bisiklet.Model" />
-                            </div>
-                            <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["favekle"]" />
-
-                        </form>
+                    <form asp-action="KarsCikar" method="post">
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="KarsId" value="@bisiklet.KarsId" />
+                        </div>
+                        <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["karscikar"]" />
+                    </form>
                     }
                 </td>
             </tr>

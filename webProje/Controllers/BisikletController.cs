@@ -78,6 +78,25 @@ namespace webProje.Controllers
             vm.KullaniciFavoriVM = bisikletListe.ToList();
             return View(vm);
         }
+        public IActionResult Karsilastir()
+        {
+            var bisikletListe = dbBisiklet.Karsilastirmalar.ToList();
+
+            ViewModel vm = new ViewModel();
+            vm.KarsilastirmaVM = bisikletListe.ToList();
+            return View(vm);
+        }
+        public IActionResult KarsilastirmayaEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult KarsilastirmayaEkle([Bind("KullaniciIp", "BisikletId", "Marka", "Model", "Materyal", "JantCapi", "VitesSayisi", "KullanimAlani", "FrenTuru", "SuspansiyonTuru")] Karsilastirma a)
+        {
+            dbBisiklet.Add(a);
+            dbBisiklet.SaveChanges();
+            return RedirectToAction("Karsilastir");
+        }
 
         public IActionResult FavorilereEkle()
         {
@@ -102,6 +121,19 @@ namespace webProje.Controllers
             dbBisiklet.KullaniciFavorileri.Remove(dbFav);
             dbBisiklet.SaveChanges();
             return RedirectToAction("Favoriler");
+        }
+
+        public IActionResult KarsCikar()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult KarsCikar(Karsilastirma kars)
+        {
+            var dbKars = dbBisiklet.Karsilastirmalar.Find(kars.KarsId);
+            dbBisiklet.Karsilastirmalar.Remove(dbKars);
+            dbBisiklet.SaveChanges();
+            return RedirectToAction("Kasrilastir");
         }
     }
 }
