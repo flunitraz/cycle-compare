@@ -133,7 +133,7 @@ namespace webProje.Controllers
             var dbKars = dbBisiklet.Karsilastirmalar.Find(kars.KarsId);
             dbBisiklet.Karsilastirmalar.Remove(dbKars);
             dbBisiklet.SaveChanges();
-            return RedirectToAction("Kasrilastir");
+            return RedirectToAction("Karsilastir");
         }
     }
 }

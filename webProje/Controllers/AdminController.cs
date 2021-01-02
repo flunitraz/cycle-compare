@@ -20,19 +20,19 @@ namespace webProje.Controllers
         }
 
 
-        //       [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.ToList();
             return View(bisikletListe);
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult KullaniciListesi()
         {
             var kullanicilar = dbBisiklet.Users.ToList();
             return View(kullanicilar);
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult RolTanimla()
         {
             return View();
@@ -45,7 +45,7 @@ namespace webProje.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -57,7 +57,7 @@ namespace webProje.Controllers
             dbBisiklet.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete()
         {
             return View();
