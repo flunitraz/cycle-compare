@@ -25,7 +25,8 @@ namespace webProje.Controllers
         {
             List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.ToList();
 
-            ViewModel vm = new ViewModel();
+            ViewModel viewModel = new ViewModel();
+            ViewModel vm = viewModel;
             vm.BisikletVM = bisikletListe.ToList();
 
             return View(vm);
@@ -43,7 +44,8 @@ namespace webProje.Controllers
 
             var favoriler = dbBisiklet.KullaniciFavorileri.ToList();
 
-            ViewModel vm = new ViewModel();
+            ViewModel viewModel = new ViewModel();
+            ViewModel vm = viewModel;
             vm.BisikletVM = bisikletListe.ToList();
             return View(vm);
         }
@@ -53,7 +55,8 @@ namespace webProje.Controllers
             List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.Where(
                 dbBisiklet => dbBisiklet.KullanimAlani.Contains("yol")).ToList();
 
-            ViewModel vm = new ViewModel();
+            ViewModel viewModel = new ViewModel();
+            ViewModel vm = viewModel;
             vm.BisikletVM = bisikletListe.ToList();
 
             return View(vm);
@@ -64,7 +67,8 @@ namespace webProje.Controllers
             List<Bisiklet> bisikletListe = dbBisiklet.Bisikletler.Where(
                 dbBisiklet => dbBisiklet.KullanimAlani.Contains("sehir")).ToList();
 
-            ViewModel vm = new ViewModel();
+            ViewModel viewModel = new ViewModel();
+            ViewModel vm = viewModel;
             vm.BisikletVM = bisikletListe.ToList();
 
             return View(vm);
@@ -74,15 +78,16 @@ namespace webProje.Controllers
         {
             var bisikletListe = dbBisiklet.KullaniciFavorileri.ToList();
 
-            ViewModel vm = new ViewModel();
+            ViewModel viewModel = new ViewModel();
+            ViewModel vm = viewModel;
             vm.KullaniciFavoriVM = bisikletListe.ToList();
             return View(vm);
         }
         public IActionResult Karsilastir()
         {
             var bisikletListe = dbBisiklet.Karsilastirmalar.ToList();
-
-            ViewModel vm = new ViewModel();
+            ViewModel viewModel = new ViewModel();
+            ViewModel vm = viewModel;
             vm.KarsilastirmaVM = bisikletListe.ToList();
             return View(vm);
         }

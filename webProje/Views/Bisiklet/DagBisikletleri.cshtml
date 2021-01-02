@@ -4,7 +4,9 @@
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-
+@{
+    ViewData["Title"] = @localizer["Title"];
+}
 <head>
     <link rel="stylesheet" href="~/css/bisiklet.css" />
     <link rel="stylesheet" href="~/js/bisiklet.js" />
@@ -83,42 +85,42 @@
                     }
                     @{
                         var request = Context.Connection.RemoteIpAddress;
-                     }
-                <form asp-action="KarsilastirmayaEkle" method="post">
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="KullaniciIp" value="@request" />
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="BisikletId" value="@bisiklet.ID" />
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="Marka" value="@bisiklet.Marka" />
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="Model" value="@bisiklet.Model" />
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="Jantcapi" value="@bisiklet.JantCapi" />
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="Materyal" value="@bisiklet.Materyal" />
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="VitesSayisi" value="@bisiklet.VitesSayisi" />
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="KullanimAlani" value="@bisiklet.KullanimAlani" />
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="FrenTuru" value="@bisiklet.FrenTuru" />
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="SuspansiyonTuru" value="@bisiklet.SuspansiyonTuru" />
-                    </div>
+                    }
+                    <form asp-action="KarsilastirmayaEkle" method="post">
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="KullaniciIp" value="@request" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="BisikletId" value="@bisiklet.ID" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="Marka" value="@bisiklet.Marka" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="Model" value="@bisiklet.Model" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="Jantcapi" value="@bisiklet.JantCapi" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="Materyal" value="@bisiklet.Materyal" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="VitesSayisi" value="@bisiklet.VitesSayisi" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="KullanimAlani" value="@bisiklet.KullanimAlani" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="FrenTuru" value="@bisiklet.FrenTuru" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="SuspansiyonTuru" value="@bisiklet.SuspansiyonTuru" />
+                        </div>
 
-                    <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["karsekle"]" />
+                        <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["karsekle"]" />
 
-                </form>
+                    </form>
                 </td>
             </tr>
         }

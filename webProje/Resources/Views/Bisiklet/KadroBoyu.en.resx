@@ -144,6 +144,9 @@
   <data name="tavsiye" xml:space="preserve">
     <value>Recommended Frame Size</value>
   </data>
+  <data name="Title" xml:space="preserve">
+    <value>Frame Size</value>
+  </data>
   <data name="yol" xml:space="preserve">
     <value>Frame Size Calculate Table For Road Cycle</value>
   </data>

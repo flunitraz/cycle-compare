@@ -1,41 +1,44 @@
 ﻿@model Bisiklet
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create" method="post">
-                <div class="form-group">
-                    <label>@localizer["marka"]</label>
-                    <input class="form-control" asp-for="Marka" />
-                </div>
-                <div class="form-group">
-                    <label>@localizer["model"]</label>
-                    <input class="form-control" asp-for="Model" />
-                </div>
-                <div class="form-group">
-                    <label>@localizer["materyal"]</label>
-                    <input class="form-control" asp-for="Materyal" />
-                </div>
-                <div class="form-group">
-                    <label>@localizer["jantcapi"]</label>
-                    <input class="form-control" asp-for="JantCapi" />
-                </div>
-                <div class="form-group">
-                    <label>@localizer["vites"]</label>
-                    <input class="form-control" asp-for="VitesSayisi" />
-                </div>
-                <div class="form-group">
-                    <label>@localizer["kullanimalani"]</label>
-                    <input class="form-control" asp-for="KullanimAlani" />
-                </div>
-                <div class="form-group">
-                    <label>@localizer["frenturu"]</label>
-                    <input class="form-control" asp-for="FrenTuru" />
-                </div>
-                <div class="form-group">
-                    <label>@localizer["suspansiyonturu"]</label>
-                    <input class="form-control" asp-for="SuspansiyonTuru" />
-                </div>
-                <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["add"]" />
-            </form>
-        </div>
- </div>
+@{
+    ViewData["Title"] = @localizer["Title"];
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label>@localizer["marka"]</label>
+                <input class="form-control" asp-for="Marka" />
+            </div>
+            <div class="form-group">
+                <label>@localizer["model"]</label>
+                <input class="form-control" asp-for="Model" />
+            </div>
+            <div class="form-group">
+                <label>@localizer["materyal"]</label>
+                <input class="form-control" asp-for="Materyal" />
+            </div>
+            <div class="form-group">
+                <label>@localizer["jantcapi"]</label>
+                <input class="form-control" asp-for="JantCapi" />
+            </div>
+            <div class="form-group">
+                <label>@localizer["vites"]</label>
+                <input class="form-control" asp-for="VitesSayisi" />
+            </div>
+            <div class="form-group">
+                <label>@localizer["kullanimalani"]</label>
+                <input class="form-control" asp-for="KullanimAlani" />
+            </div>
+            <div class="form-group">
+                <label>@localizer["frenturu"]</label>
+                <input class="form-control" asp-for="FrenTuru" />
+            </div>
+            <div class="form-group">
+                <label>@localizer["suspansiyonturu"]</label>
+                <input class="form-control" asp-for="SuspansiyonTuru" />
+            </div>
+            <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["add"]" />
+        </form>
+    </div>
+</div>

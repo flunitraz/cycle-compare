@@ -1,4 +1,7 @@
 ﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@{
+    ViewData["Title"] = @localizer["Title"];
+}
 
 <a style="background-color: #470520" type="button" class="btn btn-dark btn-lg btn-block" asp-area="" asp-controller="Admin" asp-action="Create">@localizer["eklebis"]</a>
 <a style="background-color: #470520" type="button" class="btn btn-dark btn-lg btn-block" asp-area="" asp-controller="Admin" asp-action="Delete">@localizer["silbis"]</a>

@@ -14,7 +14,7 @@ namespace webProje.Controllers
     {
         private readonly ApplicationDbContext dbBisiklet;
 
-        public AdminController(ApplicationDbContext context, RoleManager<IdentityRole> _roleManager)
+        public AdminController(ApplicationDbContext context)
         {
             dbBisiklet = context;
         }

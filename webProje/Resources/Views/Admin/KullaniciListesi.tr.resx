@@ -132,4 +132,7 @@
   <data name="phone" xml:space="preserve">
     <value>Telefon Numarasi</value>
   </data>
+  <data name="Title" xml:space="preserve">
+    <value>Kullanici Listesi</value>
+  </data>
 </root>

@@ -4,7 +4,9 @@
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-
+@{
+    ViewData["Title"] = @localizer["Title"];
+}
 <head>
     <link rel="stylesheet" href="~/css/bisiklet.css" />
     <link rel="stylesheet" href="~/js/bisiklet.js" />
@@ -34,28 +36,28 @@
 
             @foreach (var bisiklet in Fav)
             {
-        <tr>
-            <td>
-                <img src="~/@bisiklet.BisikletId-.png" height=200 width=300 />
-            </td>
-            <td>
-                @localizer[bisiklet.KullanimAlani]
-            </td>
-            <td>
-                @bisiklet.Marka
-            </td>
-            <td>
-                @bisiklet.Model
-            </td>
-            <td>
-                <form asp-action="FavoriCikar" method="post">
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" name="FavId" value="@bisiklet.FavId" />
-                    </div>
-                    <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["cikar"]" />
-                </form>
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        <img src="~/@bisiklet.BisikletId-.png" height=200 width=300 />
+                    </td>
+                    <td>
+                        @localizer[bisiklet.KullanimAlani]
+                    </td>
+                    <td>
+                        @bisiklet.Marka
+                    </td>
+                    <td>
+                        @bisiklet.Model
+                    </td>
+                    <td>
+                        <form asp-action="FavoriCikar" method="post">
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="FavId" value="@bisiklet.FavId" />
+                            </div>
+                            <input type="submit" style="background-color: #470520; color:aliceblue" class="btn" value="@localizer["cikar"]" />
+                        </form>
+                    </td>
+                </tr>
             }
         </table>
     }

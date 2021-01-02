@@ -1,6 +1,8 @@
 ﻿@model List<Microsoft.AspNetCore.Identity.IdentityUser>
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
-
+@{
+    ViewData["Title"] = @localizer["Title"];
+}
 <head>
     <link rel="stylesheet" href="~/css/kullanicilar.css" />
 </head>
@@ -20,17 +22,17 @@
 
         @foreach (var kullanici in Model)
         {
-    <tr>
-        <td>
-            @kullanici.Id;
-        </td>
-        <td>
-            @kullanici.UserName;
-        </td>
-        <td>
-            @kullanici.PhoneNumber;
-        </td>
-    </tr>
+            <tr>
+                <td>
+                    @kullanici.Id;
+                </td>
+                <td>
+                    @kullanici.UserName;
+                </td>
+                <td>
+                    @kullanici.PhoneNumber;
+                </td>
+            </tr>
 
         }
     </table>

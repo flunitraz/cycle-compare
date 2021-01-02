@@ -135,4 +135,7 @@
   <data name="karsilastiricerik" xml:space="preserve">
     <value>Compare the features of chosen bikes</value>
   </data>
+  <data name="Title" xml:space="preserve">
+    <value>Main Page</value>
+  </data>
 </root>

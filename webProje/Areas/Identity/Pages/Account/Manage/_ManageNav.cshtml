@@ -4,7 +4,7 @@
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
 <ul class="nav nav-pills flex-column">
-    <li class="nav-item"><a class="nav-link @ManageNavPages.IndexNavClass(ViewContext) bg-transparent text-black-50" id="profile" asp-page="./Index">@localizer["profil"]</a></li>
-    <li class="nav-item"><a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext) bg-transparent text-black-50" id="change-password" asp-page="./ChangePassword">@localizer["sifre"]</a></li>
-    <li class="nav-item"><a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext) bg-transparent text-black-50" id="personal-data" asp-page="./PersonalData">@localizer["veri"]</a></li>
+    <li class="nav-item"><a class="nav-link @ManageNavPages.IndexNavClass(ViewContext) bg-transparent text-white" id="profile" asp-page="./Index">@localizer["profil"]</a></li>
+    <li class="nav-item"><a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext) bg-transparent text-white" id="change-password" asp-page="./ChangePassword">@localizer["sifre"]</a></li>
+    <li class="nav-item"><a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext) bg-transparent text-white" id="personal-data" asp-page="./PersonalData">@localizer["veri"]</a></li>
 </ul>

@@ -1,5 +1,8 @@
 ﻿@model Bisiklet
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@{
+    ViewData["Title"] = @localizer["Title"];
+}
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Delete" method="post">
